@@ -11,7 +11,7 @@
     <body layout="row" ng-controller="mainController as vm">
 
         <div ng-include="'app/dist/view/sidenav.html'" layout="vertical"></div>
-        <div layout="column" flex>
+        <div layout="column" flex id="wrapper">
             <div ng-include="'app/dist/view/toolbar-header.html'"></div>
 
             <md-content flex id="content">
@@ -36,6 +36,7 @@
         <script src="./app/dist/models.js"></script>
         <script src="./app/dist/controllers/mainController.js"></script>
         <script src="./app/dist/controllers/userDialogController.js"></script>
+        <script src="./app/dist/controllers/contactPanelController.js"></script>
         <script src="./app/dist/services/userService.js"></script>
         <script src="./app/dist/boot.js"></script>
     </body>
