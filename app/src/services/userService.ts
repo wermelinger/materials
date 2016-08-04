@@ -22,7 +22,7 @@ module ContactManagerApp {
             {
                 name: "Erik",
                 avatar: "svg-1",
-                bio: "blabla",
+                bio: "I am erik. I am 50 years old. And so on and so on.",
                 notes: [
                     { title: "Pay back dinner", date: new Date("2016-01-12") },
                     { title: "Buy flowers", date: new Date("2016-01-19") },
@@ -31,7 +31,7 @@ module ContactManagerApp {
             {
                 name: "Stefan",
                 avatar: "svg-2",
-                bio: "Thats me yes bla",
+                bio: "Thats me yes bla. there is nothing more to say. ",
                 notes: [
                     { title: "Meet girlfriend", date: new Date("2016-01-12") },
                     { title: "Sleep", date: new Date("2016-02-19") },
