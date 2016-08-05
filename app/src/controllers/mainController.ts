@@ -23,7 +23,7 @@ module ContactManagerApp {
 
         users: User[] = [];
         selected: User = null;
-	    message: string = "Hello from ctrl";
+	    newNote: Note = new Note("", null);
         searchText: string = "";
         tabIndex: number = 0;
 
@@ -56,6 +56,23 @@ module ContactManagerApp {
                 // ensure clickedItem is defined
                 clickedItem && console.log(clickedItem.name + " clicked");
             })
+        }
+
+        formScope: any;
+
+        setFormScope(scope) {
+            this.formScope = scope;
+        }
+
+        addNote() {
+            this.selected.notes.push(this.newNote);
+
+            // Reset the form
+            this.formScope.noteForm.$setUntouched();
+            this.formScope.noteForm.$setPristine();
+
+            this.newNote = new Note("", null);
+            this.openToast("Note added");
         }
 
         removeNote(note: Note): void {
@@ -102,7 +119,10 @@ module ContactManagerApp {
                 controllerAs: "ctrl",
                 clickOutsideToClose: true,
                 fullscreen: useFullScreen
-            }).then((user: User) => {
+            }).then((user: CreateUser) => {
+                var newUser = User.fromCreate(user);
+                self.users.push(newUser);
+                self.selectUser(newUser);
                 self.openToast("User added");
             }, () => {
                 console.log("User cancelled the dialog");

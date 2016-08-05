@@ -1,7 +1,7 @@
 /// <reference path="all.ts"/>
 
 module ContactManagerApp {
-    angular.module("contactManagerApp", ["ngMaterial", "ngMdIcons"])
+    angular.module("contactManagerApp", ["ngMaterial", "ngMdIcons", "ngMessages"])
         .service("userService", UserService)
         .controller("mainController", MainController)
         .controller("addUserDialogController", AddUserDialogController)
@@ -15,6 +15,6 @@ module ContactManagerApp {
                 .icon("menu", "./app/assets/svg/menu.svg", 24);
             $mdThemingProvider.theme("default")
                 .primaryPalette("blue")
-                .accentPalette("red");
+                .accentPalette("blue");
         });
 }
